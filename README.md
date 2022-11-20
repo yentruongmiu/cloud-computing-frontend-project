@@ -4,7 +4,7 @@ Course CS516, November 2022
 
 ## Frontend
 
-Apply react?
+Website Yen Truong Information
 
 ## Backend
 
