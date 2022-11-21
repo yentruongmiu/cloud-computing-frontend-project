@@ -23,7 +23,7 @@ exports.handler = async (event) => {
   };
 
   if (method === "POST") {
-    if (path === "/contact") {
+    if (path === "/contacts") {
       try {
         const body = JSON.parse(event.body);
 

@@ -1,0 +1,7 @@
+@import "./bootstrap/bootstrap.min.css";
+
+.error {
+  color: #ff0000;
+  margin-bottom: 1rem;
+  margin-top: -1rem;
+}
