@@ -6,6 +6,8 @@ Course CS516, November 2022
 
 Website Yen Truong Information
 
+Using Bootstrap template BizLand
+
 ## Backend
 
 - Code for lambda function

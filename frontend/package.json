@@ -1,8 +1,9 @@
 {
-  "name": "treact",
+  "name": "CloudComputing Final Project",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babel/core": "^7.20.2",
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
@@ -13,15 +14,15 @@
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.0.0",
     "react-github-btn": "^1.4.0",
+    "react-helmet": "^6.1.0",
     "react-modal": "^3.15.0",
     "react-rnd": "^10.3.7",
+    "react-router": "^6.4.3",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5",
-    "tailwindcss": "^3.0.0",
-    "twin.macro": "^3.0.0-rc.4"
+    "styled-components": "^5.3.5"
   },
   "scripts": {
     "start": "react-scripts start",
