@@ -3,7 +3,7 @@ import { ContactForm } from "./ContactForm";
 
 export const Contact = (props) => {
   return (
-    <section id="contact" className="contact">
+    <section id="contact" className="contact section-bg">
       <div className="container aos-init aos-animate" data-aos="fade-up">
         <div className="section-title">
           <h2>Contact</h2>
@@ -37,9 +37,10 @@ export const Contact = (props) => {
           </div>
         </div>
         <div className="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
-          <div className="col-lg-6 ">Google map</div>
+          {/* <div className="col-lg-6 ">
+          </div> */}
 
-          <div className="col-lg-6">
+          <div className="col-lg-12">
             <ContactForm />
           </div>
         </div>

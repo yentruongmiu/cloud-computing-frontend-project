@@ -1,6 +1,8 @@
 const AWS = require("aws-sdk");
 const sns = new AWS.SNS({ apiVersion: '2010-03-31' });
 const sqs = new AWS.SQS({ apiVersion: '2012-11-05' });
+const dynamodb = new AWS.DynamoDB({ apiVersion: "2012-08-10" });
+const tableName = process.env.MESSAGE_TABLE;
 
 const topicArn = process.env.TOPIC_ARN;
 const sqsUrl = process.env.STANDARDSQS_URL;
@@ -22,8 +24,8 @@ exports.handler = async (event) => {
     }
   };
 
-  if (method === "POST") {
-    if (path === "/contacts") {
+  if (path === "/contacts") {
+    if (method === "POST") {
       try {
         const body = JSON.parse(event.body);
 
@@ -77,13 +79,27 @@ exports.handler = async (event) => {
 
         return getReturnObject(500, { message: errMsg });
       }
+    } else if (method === 'GET') { 
+      try {
+        const params = {
+          TableName: tableName
+        };
+        const res = await dynamodb.scan(params).promise();
+        return getReturnObject(200, res.Items);
+      } catch (e) {
+        const errMsg = "System error while get data from dynamoDB";
+        console.log(errMsg + ":", JSON.stringify(e));
+
+        return getReturnObject(500, { message: errMsg });
+      }
+      
     } else {
-      const returnMsg = "Invalid request - Wrong endpoint.";
+      const returnMsg = "Invalid request - Wrong http method.";
       console.log(returnMsg);
       return getReturnObject(400, { message: returnMsg });
     }
   } else {
-    const returnMsg = "Invalid request - Wrong http method.";
+    const returnMsg = "Invalid request - Wrong endpoint.";
     console.log(returnMsg);
     return getReturnObject(400, { message: returnMsg });
   }

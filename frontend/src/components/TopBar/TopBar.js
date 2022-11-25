@@ -12,11 +12,11 @@ export const TopBar = (props) => {
           <i className="bi bi-phone d-flex align-items-center ms-4"><span>+1 641 818 2578</span></i>
         </div>
         <div className="social-links d-none d-md-flex align-items-center">
-          <Link to="https://twitter.com/truthblue82" className="twitter"><i className="bi bi-twitter"></i></Link>
+          <a href="https://twitter.com/truthblue82" className="twitter" target="_blank"><i className="bi bi-twitter"></i></a>
         
-          <Link to="https://www.facebook.com/truong.t.yen.10" className="facebook"><i className="bi bi-facebook"></i></Link>
+          <a href="https://www.facebook.com/truong.t.yen.10" className="facebook" target="_blank"><i className="bi bi-facebook"></i></a>
           
-          <Link to="https://www.linkedin.com/in/thi-hong-yen-truong/" className="linkedin"><i className="bi bi-linkedin"></i></Link>
+          <a href="https://www.linkedin.com/in/thi-hong-yen-truong/" className="linkedin" target="_blank"><i className="bi bi-linkedin"></i></a>
         </div>
       </div>
     </section>

@@ -1,15 +1,14 @@
 {
-  "name": "CloudComputing Final Project",
+  "name": "CloudComputingFinalProject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@babel/core": "^7.20.2",
     "@testing-library/jest-dom": "^5.16.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^14.4.3",
     "axios": "^1.1.3",
-    "feather-icons": "^4.29.0",
-    "framer-motion": "^7.3.2",
+    "dotenv": "^10.0.0",
+    "dotenv-expand": "^5.1.0",
     "react": "^18.0.0",
     "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-dom": "^18.0.0",
@@ -22,7 +21,7 @@
     "react-scripts": "^5.0.1",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
-    "styled-components": "^5.3.5"
+    "web-vitals": "^3.1.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -32,16 +31,9 @@
     "deploy": "yarn build && netlify deploy --prod --dir=build"
   },
   "eslintConfig": {
-    "extends": "react-app",
-    "overrides": [
-      {
-        "files": [
-          "src/**/*.js"
-        ],
-        "rules": {
-          "import/no-anonymous-default-export": "off"
-        }
-      }
+    "extends": [
+      "react-app",
+      "react-app/jest"
     ]
   },
   "browserslist": {

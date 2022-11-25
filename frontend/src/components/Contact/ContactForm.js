@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
+import axios from 'axios';
+
 import { Input } from "components/Input/Input";
 import { Textarea } from "components/Textarea/Textarea";
 import { Button } from "components/Button/Button";
 import { Snackbar } from "components/Snackbar/Snackbar";
-import axios from 'axios';
-
+import Constants from "Constants";
 import './ContactForm.css';
 
-const contactUrl = "https://a5els4vmw2.execute-api.us-east-1.amazonaws.com/v1/contacts";
 
 export const ContactForm = (props) => {
   const initContact = {
@@ -41,13 +41,14 @@ export const ContactForm = (props) => {
 
   const contactHandler = async () => {    
     if (formValid) {
-      const res = await axios.post(contactUrl, contactData, {
+      setFormValid(false);
+      const res = await axios.post(Constants.REACT_APP_CONTACT_ENDPOINT, contactData, {
         headers: { 'content-type': 'application/json' }
       });
 
       console.log('result:', JSON.stringify(res));
       //show snackbar
-      if (res.statusCode === 200) {
+      if (res.status === 200) {
         setConfirmMsg('Your message has been sent. Thank you!');
       } else {
         setConfirmMsg(res.message);
