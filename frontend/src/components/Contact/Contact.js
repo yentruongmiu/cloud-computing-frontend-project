@@ -1,5 +1,6 @@
 import React from "react";
 import { ContactForm } from "./ContactForm";
+import { ContactList } from "./ContactList";
 
 export const Contact = (props) => {
   return (
@@ -39,9 +40,16 @@ export const Contact = (props) => {
         <div className="row aos-init aos-animate" data-aos="fade-up" data-aos-delay="100">
           {/* <div className="col-lg-6 ">
           </div> */}
-
+          
           <div className="col-lg-12">
-            <ContactForm />
+            {
+              props.isAuth === false && 
+              <ContactForm />
+            }
+            {
+              props.isAuth === true &&
+              <ContactList isAuth={props.isAuth} />
+            }
           </div>
         </div>
       </div>

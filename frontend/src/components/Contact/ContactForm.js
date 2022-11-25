@@ -41,14 +41,18 @@ export const ContactForm = (props) => {
 
   const contactHandler = async () => {    
     if (formValid) {
-      setFormValid(false);
       const res = await axios.post(Constants.REACT_APP_CONTACT_ENDPOINT, contactData, {
         headers: { 'content-type': 'application/json' }
       });
-
+      
       console.log('result:', JSON.stringify(res));
       //show snackbar
       if (res.status === 200) {
+        setFormValid(false);
+        setContactData({
+          ...initContact,
+          message: ''
+        });
         setConfirmMsg('Your message has been sent. Thank you!');
       } else {
         setConfirmMsg(res.message);
@@ -186,10 +190,9 @@ export const ContactForm = (props) => {
           name='message'
           id='message'
           rows={5}
-          value={contactData.message}
           label='Message*'
           changed={onChange}
-        ></Textarea>
+        >{contactData.message}</Textarea>
         {
           validator.message !== '' && 
           <div className="error">{validator.message}</div>

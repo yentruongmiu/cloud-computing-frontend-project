@@ -1,12 +1,16 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Cookies from 'universal-cookie';
 
 import logo from "assets/images/logo.png";
 import Constants from "Constants";
 
 export const Header = (props) => {
   const active = props.active ? props.active : 'hero';
-
+  const cookies = new Cookies();
+  const logout = () => {
+    cookies.remove('token');
+  }
   return (
     <header id="header" className="d-flex align-items-center">
       <div className="container d-flex align-items-center justify-content-between">
@@ -23,7 +27,14 @@ export const Header = (props) => {
             {/* <li><Link className={`nav-link scrollto ${active === 'testimonial' ? 'active' : ''}`} to="#testimonial">Testimonial</Link></li> */}
             <li><Link className={`nav-link scrollto ${active === 'blog' ? 'active' : ''}`} to="#blog">Blog</Link></li>
             <li><Link className={`nav-link scrollto ${active === 'contact' ? 'active' : ''}`} to="#contact">Contact</Link></li>
-            <a href={Constants.REACT_APP_LOGIN_URL} className="glightbox btn-watch-video" title="Login"><i className="bi bi-play-circle"></i></a>
+            {
+              props.isAuth === true &&
+              <a href="/" onClick={logout} className="btn-watch-video" title="Logout"><i className="bi bi-box-arrow-in-left"></i></a>
+            }
+            {
+              props.isAuth === false &&
+              <a href={Constants.REACT_APP_LOGIN_URL} className="btn-watch-video" title="Login"><i className="bi bi-box-arrow-in-right"></i></a>
+            }
           </ul>
         </nav>
       </div>

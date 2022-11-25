@@ -10,7 +10,8 @@ import { AWSNaptune } from "./AWSNaptune";
 
 
 export const BlogDetail = (props) => {
-  
+  const isAuth = props.isAuth;
+
   return (
     <div>
       <Helmet>
@@ -18,7 +19,7 @@ export const BlogDetail = (props) => {
       </Helmet>
 
       <TopBar />
-      <Header active="blog"/>
+      <Header active="blog" isAuth={isAuth}/>
       
       <main id="main">
         <Breadcrumbs />

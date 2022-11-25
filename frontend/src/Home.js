@@ -14,6 +14,8 @@ import { Footer } from "components/Footer/Footer";
 import { ArrowUp } from "components/ArrowUp/ArrowUp";
 
 export const Home = (props) => {
+  const isAuth = props.isAuth;
+
   return (
     <>
       <Helmet>
@@ -21,7 +23,7 @@ export const Home = (props) => {
       </Helmet>
 
       <TopBar />
-      <Header />
+      <Header isAuth={isAuth} />
       <Hero />
 
       <main id="main">
@@ -30,7 +32,7 @@ export const Home = (props) => {
         <Skill />
         <Education />
         <Blogs />
-        <Contact />
+        <Contact isAuth={isAuth} />
       </main>
       <Footer />
       <ArrowUp />

@@ -18,7 +18,7 @@ export const Blogs = (props) => {
             <div className="portfolio-info">
               <h4>Graph Database</h4>
               <p>Amazon Neptune</p>
-              {/* <a href={neptuneImg} data-gallery="portfolioGallery" className="portfolio-lightbox preview-link" title="Amazon Neptune"><i className="bx bx-plus"></i></a> */}
+              <a href={neptuneImg} data-gallery="portfolioGallery" className="glightbox portfolio-lightbox preview-link" title="Amazon Neptune"><i className="bx bx-plus"></i></a>
               <Link to="/blog-detail" className="details-link" title="More Details"><i className="bx bx-link"></i></Link>
             </div>
           </div>
