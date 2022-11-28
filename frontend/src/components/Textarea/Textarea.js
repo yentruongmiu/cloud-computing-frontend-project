@@ -8,13 +8,14 @@ export const Textarea = (props) => {
       {
         floating &&
         <textarea
-            className={`form-control ${invalid ? 'is-invalid' : ''}`}
+          className={`form-control ${invalid ? 'is-invalid' : ''}`}
           placeholder={props.placeholder ? props.placeholder : ''}
           id={props.id}
           name={props.name}
           rows={props.rows}
           onChange={props.changed}
-          >{props.children}</textarea>
+          value={props.value}
+          ></textarea>
       }
       <label
         className='form-label'
@@ -29,7 +30,8 @@ export const Textarea = (props) => {
             name={props.name}
             rows={props.rows}
             onChange={props.changed}
-        >{props.children}</textarea>
+            value={props.value}
+        ></textarea>
       }
     </div>
   );

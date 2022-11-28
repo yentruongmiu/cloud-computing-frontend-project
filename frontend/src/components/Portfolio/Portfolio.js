@@ -16,7 +16,9 @@ export const Portfolio = (props) => {
             <h5>Cloud Computing</h5>
             <p>Personal Information website</p>
           </div>
-          <div className="col-lg-10 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
+        </div>
+        <div className="row" style={{marginBottom: "2rem"}}>
+          <div className="col-lg-12 aos-init aos-animate" data-aos="fade-right" data-aos-delay="100">
             <img src={cloudImg} className="img-fluid" alt="" />
           </div>
           

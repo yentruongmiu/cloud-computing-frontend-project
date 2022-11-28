@@ -192,7 +192,8 @@ export const ContactForm = (props) => {
           rows={5}
           label='Message*'
           changed={onChange}
-        >{contactData.message}</Textarea>
+          value={contactData.message}
+        />
         {
           validator.message !== '' && 
           <div className="error">{validator.message}</div>
