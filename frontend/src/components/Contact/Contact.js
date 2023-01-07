@@ -17,7 +17,7 @@ export const Contact = (props) => {
             <div className="info-box mb-4">
               <i className="bx bx-map"></i>
               <h3>My Address</h3>
-              <p>2067 LibertyVille Road, Appartment 1, Fairfield, IA 52556</p>
+              <p>Edgewood Ln, Yorba Linda, CA, 92886</p>
             </div>
           </div>
 

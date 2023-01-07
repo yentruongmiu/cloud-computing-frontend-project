@@ -12,3 +12,9 @@ Using Bootstrap template BizLand
 
 - Code for lambda function
 - Structure
+
+## Deployment
+
+- Go to frontend folder
+- Run command: npm build
+- Push all resources in folder build to AWS S3
